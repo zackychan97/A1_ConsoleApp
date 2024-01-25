@@ -12,6 +12,24 @@
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
             Console.WriteLine();
+
+            // Todays Date section of code
+            string today = DateTime.Now.ToShortDateString();
+            Console.WriteLine($"Todays date is: {today}");
+
+            // List of dinos section of code
+            List<string> Dinosaurs = new List<string>();
+            Dinosaurs.Add("Tyrannosaurus Rex");
+            Dinosaurs.Add("Velociraptor");
+            Dinosaurs.Add("Stegosaurus");
+            Dinosaurs.Add("Triceratops");
+            Dinosaurs.Add("Spinosaurus");
+            Dinosaurs.Add("Ankylosaurus");
+            Dinosaurs.Add("Brachiosaurus");
+            Dinosaurs.Add("Dilophosaurus");
+            Dinosaurs.Add("Argentinosaurus");
+            Dinosaurs.Add("Parasaurolophus");
+
         }
     }
 }
