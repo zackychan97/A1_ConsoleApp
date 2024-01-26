@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace A1_ConsoleApp
 {
@@ -6,6 +7,7 @@ namespace A1_ConsoleApp
     {
         static void Main(string[] args)
         {
+
             // Print Random Number section of code
             PrintRandomNumber();
             Console.WriteLine();
@@ -57,9 +59,66 @@ namespace A1_ConsoleApp
             Console.WriteLine(SortedDinosaursList[randNum]);
         }
 
-        public static void PrintRandomStringAlteration(string str)
+        public static void PrintRandomStringAction()
         {
-            Console.WriteLine($"Altering your string: {str}");
+            Console.Write("Enter in text string you would like: ");
+            string? str = Console.ReadLine();
+
+            if (str != null)
+            {
+                Console.WriteLine($"Taking random action with your string: {str}");
+
+                Random rnd = new Random();
+                int randNum = rnd.Next(0, 10);
+                string? alteredStr;
+                string? actionTaken;
+
+                switch (randNum)
+                {
+                    case 0:
+                        alteredStr = str.ToLower();
+                        actionTaken = "toLower()";
+                        break;
+                    case 1:
+                        alteredStr = str.ToUpper();
+                        actionTaken = "toUpper()";
+                        break;
+                    case 2:
+                        alteredStr = str.Length.ToString();
+                        actionTaken = "Length";
+                        break;
+                    case 3:
+                        int lastCharIndex = str.Length-1;
+                        alteredStr = str.Substring(lastCharIndex);
+                        actionTaken = "Substring()";
+                        break;
+                    case 4:
+                        StringBuilder sb = new StringBuilder();
+                        sb.Append(str);
+                        break;
+                    case 5:
+                        string secretCode = "C# is awesome";
+                        alteredStr = str.Contains(secretCode).ToString();
+                        actionTaken = "Contains()";
+                        break;
+                    case 6:
+                        alteredStr = str.GetType().ToString();
+                        actionTaken = "GetType()";
+                        break;
+                    case 7:
+                        alteredStr = str.IndexOf("a").ToString();
+                        actionTaken = "IndexOf";
+                        break;
+                    case 8:
+                        alteredStr = str.Replace("a", "X").Replace("e", "X").Replace("i", "X").Replace("o", "X").Replace("u", "X").Replace("y", "X");
+                        actionTaken = "Replace()";
+                        break;
+                    case 9:
+                        alteredStr = str.Reverse().ToString();
+                        actionTaken = "Equals()";
+                        break;
+                }
+            }
 
         }
     }
