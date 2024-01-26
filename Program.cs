@@ -78,44 +78,57 @@ namespace A1_ConsoleApp
                     case 0:
                         alteredStr = str.ToLower();
                         actionTaken = "toLower()";
+                        Console.WriteLine($"{actionTaken} method applied: {alteredStr}");
                         break;
                     case 1:
                         alteredStr = str.ToUpper();
                         actionTaken = "toUpper()";
+                        Console.WriteLine($"{actionTaken} method applied: {alteredStr}");
                         break;
                     case 2:
                         alteredStr = str.Length.ToString();
                         actionTaken = "Length";
+                        Console.WriteLine($"{actionTaken} property derived: {alteredStr}");
                         break;
                     case 3:
                         int lastCharIndex = str.Length-1;
                         alteredStr = str.Substring(lastCharIndex);
                         actionTaken = "Substring()";
+                        Console.WriteLine($"{actionTaken} method applied, getting last character: {alteredStr}");
                         break;
                     case 4:
-                        StringBuilder sb = new StringBuilder();
-                        sb.Append(str);
+                        alteredStr = str.LastIndexOf("a").ToString();
+                        actionTaken = "LastIndexOf()";
+                        Console.WriteLine($"{actionTaken} method applied: {alteredStr}");
                         break;
                     case 5:
                         string secretCode = "C# is awesome";
                         alteredStr = str.Contains(secretCode).ToString();
                         actionTaken = "Contains()";
+                        Console.WriteLine($"{actionTaken} method applied, looking for 'C# is awesome': {alteredStr}");
                         break;
                     case 6:
                         alteredStr = str.GetType().ToString();
                         actionTaken = "GetType()";
+                        Console.WriteLine($"{actionTaken} method applied, as predicted, this will always be a: {alteredStr}");
                         break;
                     case 7:
                         alteredStr = str.IndexOf("a").ToString();
                         actionTaken = "IndexOf";
+                        Console.WriteLine($"{actionTaken} method applied, first index of 'a': {alteredStr}");
                         break;
                     case 8:
                         alteredStr = str.Replace("a", "X").Replace("e", "X").Replace("i", "X").Replace("o", "X").Replace("u", "X").Replace("y", "X");
                         actionTaken = "Replace()";
+                        Console.WriteLine($"{actionTaken} method applied, replacing all vowels with 'X': {alteredStr}");
                         break;
                     case 9:
                         alteredStr = str.Reverse().ToString();
-                        actionTaken = "Equals()";
+                        actionTaken = "Reverse()";
+                        Console.WriteLine($"{actionTaken} method applied: {alteredStr}");
+                        break;
+                    default:
+                        Console.WriteLine($"Something weird happened");
                         break;
                 }
             }
