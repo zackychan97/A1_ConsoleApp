@@ -16,8 +16,9 @@ namespace A1_ConsoleApp
 
         public static void ConsoleMenu(ref bool keepRunning)
         {
-            Console.WriteLine("Welcome to the menu! Here are your options:\nEnter 1 for PrintRandomNumber()\nEnter 2 for PrintTodaysDate()\nEnter 3 for PrintRandomDino()\nEnter 4 to PrintRandomStringAction()\nEnter 5 to exit");
-            string? numInputStr = Console.ReadKey().ToString();
+            Console.WriteLine("Welcome to the menu! Here are your options:\nEnter 1 for PrintRandomNumber()\nEnter 2 for PrintTodaysDate()\nEnter 3 for PrintRandomDino()\nEnter 4 to PrintRandomStringAction()\nEnter 5 to exit\nReminder: press return/enter after choosing menu item");
+            string numInputStr = Console.ReadLine();
+            Console.WriteLine();
 
             switch (numInputStr)
             {
@@ -61,9 +62,6 @@ namespace A1_ConsoleApp
             Random rnd = new Random();
             int randNum = rnd.Next(1, 11);
             Console.WriteLine($"Random number: {randNum}");
-            Console.WriteLine("Press any key to continue.");
-            Console.ReadKey();
-            Console.WriteLine();
         }
 
         public static void PrintTodaysDate()
