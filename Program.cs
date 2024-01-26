@@ -7,17 +7,52 @@ namespace A1_ConsoleApp
     {
         static void Main(string[] args)
         {
+            bool keepRunning = true;
+            do
+            {
+                ConsoleMenu(ref keepRunning);
+            } while (keepRunning);
+        }
 
-            // Print Random Number section of code
-            PrintRandomNumber();
-            Console.WriteLine();
-            // Todays Date section of code
-            PrintTodaysDate();
-            Console.WriteLine();
-            // List of dinos section of code
-            PrintRandomDino();
-            Console.WriteLine();
+        public static void ConsoleMenu(ref bool keepRunning)
+        {
+            Console.WriteLine("Welcome to the menu! Here are your options:\nEnter 1 for PrintRandomNumber()\nEnter 2 for PrintTodaysDate()\nEnter 3 for PrintRandomDino()\nEnter 4 to PrintRandomStringAction()\nEnter 5 to exit");
+            string? numInputStr = Console.ReadKey().ToString();
 
+            switch (numInputStr)
+            {
+                case "1":
+                    Console.WriteLine("----------");
+                    PrintRandomNumber();
+                    Console.WriteLine("----------");
+                    break;
+                case "2":
+                    Console.WriteLine("----------");
+                    PrintTodaysDate();
+                    Console.WriteLine("----------");
+                    break;
+                case "3":
+                    Console.WriteLine("----------");
+                    PrintRandomDino();
+                    Console.WriteLine("----------");
+                    break;
+                case "4":
+                    Console.WriteLine("----------");
+                    PrintRandomStringAction();
+                    Console.WriteLine("----------");
+                    break;
+                case "5":
+                    Console.WriteLine("----------");
+                    Console.WriteLine("Exiting. Goodbye.");
+                    Console.WriteLine("----------");
+                    keepRunning = false;
+                    return;
+                default:
+                    Console.WriteLine("----------");
+                    Console.WriteLine("That isn't an available menu command.");
+                    Console.WriteLine("----------");
+                    break;
+            }
         }
 
         public static void PrintRandomNumber()
