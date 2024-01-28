@@ -156,7 +156,10 @@ namespace A1_ConsoleApp
                         Console.WriteLine($"{actionTaken} method applied, replacing all vowels with 'X': {alteredStr}");
                         break;
                     case 9:
-                        alteredStr = str.Reverse().ToString();
+                        char[] charArray = str.ToCharArray();
+                        Array.Reverse( charArray );
+                        string reversedString = new string( charArray );
+                        alteredStr = reversedString;
                         actionTaken = "Reverse()";
                         Console.WriteLine($"{actionTaken} method applied: {alteredStr}");
                         break;
