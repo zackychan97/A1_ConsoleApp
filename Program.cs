@@ -7,9 +7,6 @@ namespace A1_ConsoleApp
     {
         static void Main(string[] args)
         {
-            // compile error
-            bool error = true;
-            error = "hello world this is an error";
             bool keepRunning = true;
             do
             {
