@@ -3,7 +3,7 @@ using System.Text;
 
 namespace A1_ConsoleApp
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
